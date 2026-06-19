@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Hari Krishna T — Portfolio (v2)
 
-## Getting Started
+A premium, editorial portfolio for **Hari Krishna T, Full Stack Developer**. Dark
+luxe aesthetic, smooth inertia scrolling, refined motion, and a fully static,
+accessibility- and SEO-conscious build.
 
-First, run the development server:
+## Tech stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Next.js 16** (App Router, fully static prerender)
+- **React 19** + **TypeScript**
+- **Tailwind CSS v4** (`@theme` design tokens)
+- **Framer Motion** (reveals, parallax, magnetic + custom cursor)
+- **Lenis** (smooth scrolling)
+- **lucide-react** (icons)
+
+## Project structure
+
+```
+app/
+  layout.tsx            Root layout: fonts, metadata, JSON-LD, providers
+  page.tsx              Section composition
+  globals.css           Design tokens + utilities
+  opengraph-image.tsx   Dynamic social share image
+  twitter-image.tsx     Re-uses the OG image
+  icon.tsx / apple-icon.tsx   Generated monogram favicons
+  manifest.ts           PWA web manifest
+  sitemap.ts / robots.ts      SEO files
+  not-found.tsx         Styled 404
+components/
+  providers/SmoothScroll.tsx
+  layout/Header.tsx  layout/Footer.tsx
+  sections/Hero.tsx  Work.tsx  About.tsx  Contact.tsx
+  ui/                Reveal, MaskReveal, Magnetic, Cursor, ScrollProgress, LocalTime
+lib/site.ts            ← Single source of truth for ALL content
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Editing content
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Everything (name, role, projects, skills, socials, links, domain) lives in
+**`lib/site.ts`**. Update that one file and the whole site + SEO + OG image
+follow. Before deploying, set the real production domain in `site.url`.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Develop
 
-## Learn More
+```bash
+npm install
+npm run dev      # http://localhost:3000 (or PORT=3001 npm run dev)
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Build
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run build    # static export, type-checked
+npm start        # serve the production build
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deploy (Vercel — recommended)
 
-## Deploy on Vercel
+1. Push this folder to a GitHub repo.
+2. Import the repo at [vercel.com/new](https://vercel.com/new) — Vercel
+   auto-detects Next.js; no config needed.
+3. Set `site.url` in `lib/site.ts` to your final domain and redeploy.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Or from the CLI:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm i -g vercel
+vercel            # preview deploy
+vercel --prod     # production deploy
+```
