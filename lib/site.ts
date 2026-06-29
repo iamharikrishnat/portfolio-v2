@@ -69,7 +69,7 @@ export const projects: Project[] = [
     description:
       "A project-based online learning platform built around \"learn by building\" — structured course content with hands-on, practical exercises in a fast, focused interface.",
     stack: ["Next.js", "React", "Tailwind"],
-    href: "https://course-platform-kappa-wheat.vercel.app",
+    href: "https://courseplatformin.vercel.app/",
   },
   {
     id: "gamma",
