@@ -34,7 +34,7 @@ export default function Contact() {
     <section
       id="contact"
       aria-labelledby="contact-heading"
-      className="relative mx-auto max-w-7xl px-5 py-28 md:px-10 md:py-40"
+      className="relative mx-auto max-w-7xl px-5 pt-16 pb-8 md:px-10 md:py-40"
     >
       <Reveal>
         <p className="mb-6 font-mono text-xs uppercase tracking-[0.25em] text-accent">

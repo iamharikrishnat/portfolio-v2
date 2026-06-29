@@ -97,7 +97,7 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${fraunces.variable} ${mono.variable} antialiased`}
     >
-      <body className="grain min-h-dvh">
+      <body className="grain flex min-h-dvh flex-col">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
