@@ -125,7 +125,7 @@ export default function Contact() {
               aria-hidden
               value={form.website}
               onChange={(e) => setForm({ ...form, website: e.target.value })}
-              className="absolute left-[-9999px] h-0 w-0 opacity-0"
+              className="sr-only"
             />
 
             <div className="grid gap-5">
