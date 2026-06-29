@@ -56,7 +56,7 @@ export const projects: Project[] = [
     type: "Tharayil Bhagavathi",
     year: "2026",
     description:
-      "Redesigned devotional website for the Tharayil Bhagavathi temple with a modern tech stack — featuring a fully controllable admin panel to manage content, events, and offerings without touching code.",
+      "The official Tharayil Bhagavathi temple website — designed from scratch with a modern tech stack, featuring a powerful admin panel that gives the temple team full control over content and events.",
     stack: ["HTML", "CSS", "JavaScript"],
     href: "https://tharayilbhagavathikshethram.in",
   },
